@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "context7": {
+      "args": [
+        "-y",
+        "--package=@upstash/context7-mcp@2.2.5",
+        "--",
+        "context7-mcp"
+      ],
+      "command": "npx"
+    },
+    "engram": {
+      "args": [
+        "${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/gentle-ai.sh",
+        "engram",
+        "mcp",
+        "--tools=agent"
+      ],
+      "command": "bash"
+    }
+  }
+}
