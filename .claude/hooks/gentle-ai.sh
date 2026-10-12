@@ -5,6 +5,8 @@
 #   gentle-ai.sh setup            install both binaries if missing
 #   gentle-ai.sh run <args...>    run gentle-ai (no-op if it cannot be installed)
 #   gentle-ai.sh engram <args...> exec engram (used by the MCP server entry)
+#   gentle-ai.sh memory-import    load memories committed under .engram/
+#   gentle-ai.sh memory-export    write new memories to .engram/ (commit them)
 set -uo pipefail
 
 GENTLE_AI_VERSION="v4.1.1"
@@ -44,5 +46,17 @@ case "$cmd" in
     install_bin engram "github.com/Gentleman-Programming/engram/cmd/engram@${ENGRAM_VERSION}" || exit 1
     exec engram "$@"
     ;;
-  *) echo "usage: $0 setup | run <args> | engram <args>" >&2; exit 2 ;;
+  memory-import | memory-export)
+    # The Engram DB lives in ~/.engram and dies with the container, so
+    # memories round-trip through compressed chunks committed in .engram/.
+    command -v engram >/dev/null 2>&1 || exit 0
+    cd "${CLAUDE_PROJECT_DIR:-$PWD}" || exit 0
+    if [ "$cmd" = memory-import ]; then
+      [ -d .engram ] && engram sync --import >/dev/null 2>&1
+    else
+      engram sync >/dev/null 2>&1
+    fi
+    exit 0
+    ;;
+  *) echo "usage: $0 setup | run <args> | engram <args> | memory-import | memory-export" >&2; exit 2 ;;
 esac
