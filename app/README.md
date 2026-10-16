@@ -1,56 +1,60 @@
-# Welcome to your Expo app 👋
+# App de Blip (iPhone)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App de Expo + TypeScript. Hasta la Fase 7 se prueba en **Expo Go**, sin pagar nada.
 
-## Get started
+## Probarla en tu iPhone
 
-1. Install dependencies
+### Una sola vez
+
+1. Instala en tu computadora **Node.js LTS** (nodejs.org) y **Git** (git-scm.com).
+2. Instala **Expo Go** en el iPhone desde el App Store.
+3. En una terminal, clona el repo en la rama de trabajo:
 
    ```bash
+   git clone -b claude/quirky-davinci-pqwpl4 https://github.com/MauIds/blip-app.git
+   cd blip-app/app
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Cada vez que quieras probar
 
 ```bash
-npm run reset-project
+cd blip-app/app
+git pull               # trae los últimos cambios
+npm install            # solo si cambiaron dependencias; no hace daño correrlo siempre
+npx expo start         # muestra un código QR
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Escanea el QR con la cámara del iPhone y se abre en Expo Go. El teléfono y la computadora tienen que estar en la **misma red Wi-Fi**; si no se puede, usa `npx expo start --tunnel`.
 
-### Other setup steps
+Si Expo Go dice que el proyecto es incompatible, actualiza Expo Go desde el App Store: este proyecto usa **Expo SDK 58**.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Qué probar en la Fase 1
 
-## Learn more
+1. Abre la pestaña **Blip** y toca **Completa tu perfil**.
+2. Toca **Guardar perfil** sin llenar nada: deben marcarse en rojo los 5 campos obligatorios.
+3. Llena nombre, nombre en el badge, puesto, rol y código del evento (por ejemplo `DD26`) y guarda: aparece **Perfil guardado**.
+4. Pega tu link de GitHub completo: al guardar queda solo tu usuario.
+5. Toca **Elegir qué datos compartes**: por defecto solo están activos nombre y puesto.
+6. Activa GitHub: aparece en **Así te verán**. La fila **Edad** siempre está apagada y bloqueada.
+7. Cierra Expo Go y vuelve a abrir la app: tu perfil y tus elecciones siguen ahí.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Comandos de desarrollo
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+| Comando | Qué hace |
+|---------|----------|
+| `npm test` | Corre las pruebas automáticas |
+| `npm run typecheck` | Revisa los tipos de TypeScript |
+| `npm run lint` | Revisa el estilo del código |
 
-## Join the community
+## Estructura
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```text
+src/
+  app/        Pantallas y navegación (cada archivo es una ruta)
+  features/   Código por funcionalidad: profile, sharing, ...
+  domain/     Reglas puras con sus pruebas (perfil, privacidad)
+  services/   Almacenamiento en el teléfono
+  ui/         Componentes visuales reutilizables
+  i18n/       Textos: app en español, badge en inglés
+```
