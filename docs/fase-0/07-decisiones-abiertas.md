@@ -1,8 +1,8 @@
 # Decisiones abiertas
 
-**Cómo responder:** si estás de acuerdo con todas mis recomendaciones, basta con "apruebo la Fase 0". Si quieres cambiar algo, dime el número y tu elección.
+**Estado (16/10/2026):** Fase 0 aprobada con todas las recomendaciones (D2 a D7, D9 a D11). Siguen pendientes **D1** y **D8**, que no tenían recomendación.
 
-## Necesito tu respuesta
+## Decisiones
 
 | # | Decisión | Mi recomendación | Por qué |
 |---|----------|------------------|---------|
@@ -18,9 +18,10 @@
 | D10 | ¿Ya tienen el dominio `blipz.app`? | Comprarlo antes de grabar etiquetas NFC | Una etiqueta grabada con un dominio que no controlan no se puede corregir |
 | D11 | ¿Cómo aplicamos cambios a Supabase en la Fase 4? | Tú corres `npx supabase db push` desde tu PC con el comando que te paso | No hay que dejar llaves de tu cuenta en el entorno en la nube |
 
-## Imágenes que no llegaron
+## Imágenes pendientes
 
-El prompt menciona la animación "PING!/PONG!" y una escena de dos personas en un evento, pero solo llegaron 4 imágenes: hoja de insignias, Blip en reposo, "NEW BADGE!" y la pantalla de misiones. Si existen, envíalas y las agrego a `docs/referencias/`.
+- La escena del evento ya está en [`referencias/escena-evento.jpg`](../referencias/escena-evento.jpg). Confirma el contrato: el badge que inicia muestra `PING!` y el que responde, `PONG!`.
+- Falta la animación "PING!/PONG!" detallada; se agrega cuando exista.
 
 ## Decisiones que ya tomé (dime si no estás de acuerdo)
 

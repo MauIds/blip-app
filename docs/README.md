@@ -1,6 +1,6 @@
 # Documentación de Blipz
 
-Aquí vive la especificación del proyecto. La Fase 0 está completa y espera aprobación.
+Aquí vive la especificación del proyecto. La Fase 0 está aprobada (16/10/2026). Fase actual: **Fase 1**.
 
 ## Orden de lectura (Fase 0)
 

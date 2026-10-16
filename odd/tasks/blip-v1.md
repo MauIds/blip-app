@@ -25,8 +25,8 @@ Human-readable spec (Spanish): `docs/fase-0/`. Phase gate: no phase starts witho
 
 | ID | Phase | Specs | Route | Status | Evidence |
 |----|-------|-------|-------|--------|----------|
-| T0 | Fase 0: plan y especificación | S1–S15 | inline | done, awaiting approval | `docs/fase-0/` (commit pending) |
-| T1 | Fase 1: base, navegación y perfil | S1, S3, S13, S14 | — | blocked on T0 approval | — |
+| T0 | Fase 0: plan y especificación | S1–S15 | inline | done, approved 2026-10-16 | 8228510, 09ac1d0 |
+| T1 | Fase 1: base, navegación y perfil | S1, S3, S13, S14 | inline | in progress | — |
 | T2 | Fase 2: Blip, aspectos y emociones | S11 | — | pending | — |
 | T3 | Fase 3: simulador y sincronización | S9, S10 | — | pending | — |
 | T4 | Fase 4: backend | S2, S3, S4, S6, S12 | — | pending | — |
@@ -173,3 +173,4 @@ Empieza con la Fase 0. Revisa las imágenes adjuntas y el repo actual, y entrég
 ```
 
 - L2 (2026-10-13) — T0 analysis. Repo was empty apart from the Gentle AI setup. Verified: BLE needs a development build (Expo Go cannot load native BLE modules); `react-native-ble-plx` ships an Expo config plugin. EAS internal distribution to an iPhone requires a paid Apple Developer account (docs.expo.dev/build/internal-distribution). Key design calls: phases 1–7 run in Expo Go with a protocol-level badge simulator, so the paid Apple account is needed only in phase 8; age stored as `birth_year` in an owner-only table with no share toggle; `encounter_id` = initiator's 8-byte nonce echoed in PONG; confirmation needs both halves server-side. Only 4 of the reference images arrived (PING/PONG animation and event scene missing). Open decisions D1–D11 in `docs/fase-0/07-decisiones-abiertas.md`. Next: user approval of T0.
+- L3 (2026-10-16) — User, verbatim: "aquí está la imagen ilustrativa, no tengo la imagen de ping pong aun, pero te comparto estas, y si apruebo la fase 0". Phase 0 approved with all recommendations; D1 (computer OS) and D8 (DD26 details) still unanswered. Event scene saved as `docs/referencias/escena-evento.jpg` (initiator shows PING!, responder PONG!). Starting T1.
