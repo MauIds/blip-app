@@ -1,9 +1,17 @@
-import { Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
-export default function Index() {
+import { useProfileStore } from '@/features/profile/profile-store';
+import { Button } from '@/ui/button';
+import { ComingSoon } from '@/ui/coming-soon';
+
+export default function BlipTab() {
+  const { t } = useTranslation();
+  const hasProfile = useProfileStore((state) => state.profile !== null);
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Blipz</Text>
-    </View>
+    <ComingSoon title={t('comingSoon.blip.title')} body={t('comingSoon.blip.body')}>
+      {hasProfile ? null : <Button label={t('comingSoon.completeProfile')} onPress={() => router.push('/profile')} />}
+    </ComingSoon>
   );
 }
