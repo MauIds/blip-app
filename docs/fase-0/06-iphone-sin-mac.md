@@ -1,5 +1,7 @@
 # Cómo instalar la app en tu iPhone sin Mac
 
+> **Corrección (17/10/2026):** esto era falso. Expo Go del App Store solo soporta hasta el **SDK 54** ([documentación de Expo](https://docs.expo.dev/troubleshooting/expo-go-version-mismatch/)) y el proyecto usa el SDK 58. Para probar en un iPhone hace falta una build propia, que requiere Apple Developer. El camino a seguir está pendiente de decisión: ver [decisiones abiertas](07-decisiones-abiertas.md).
+
 **Respuesta corta:** hasta la Fase 7 no necesitas pagar nada; usas **Expo Go**, gratis en el App Store. Para la Fase 8 (Bluetooth real) necesitas el **Apple Developer Program (USD 99 al año)**, porque instalar una app propia fuera de Expo Go requiere una cuenta de desarrollador pagada ([documentación de Expo](https://docs.expo.dev/build/internal-distribution/)).
 
 ## Fases 1 a 7: Expo Go (gratis)

@@ -30,7 +30,10 @@
 
 ## Por qué este orden
 
-- **Las fases 1 a 7 funcionan en Expo Go**, una app gratuita del App Store. Como el badge simulado reemplaza al Bluetooth, no necesitas pagar Apple hasta la Fase 8.
+- ~~**Las fases 1 a 7 funcionan en Expo Go**, una app gratuita del App Store. Como el badge simulado reemplaza al Bluetooth, no necesitas pagar Apple hasta la Fase 8.~~
+
+> **Corrección (17/10/2026):** esto era falso. Expo Go del App Store solo soporta hasta el **SDK 54** ([documentación de Expo](https://docs.expo.dev/troubleshooting/expo-go-version-mismatch/)) y el proyecto usa el SDK 58. Para probar en un iPhone hace falta una build propia, que requiere Apple Developer. El camino a seguir está pendiente de decisión: ver [decisiones abiertas](07-decisiones-abiertas.md).
+
 - **El simulador va antes que el backend** para que el contrato con el badge quede probado sin depender de internet.
 - **La IA va al final** porque las misiones fijas ya cubren la demo. Si la IA falla, nada se rompe.
 

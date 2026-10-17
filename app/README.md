@@ -1,14 +1,15 @@
 # App de Blip (iPhone)
 
-App de Expo + TypeScript. Hasta la Fase 7 se prueba en **Expo Go**, sin pagar nada.
+App de Expo + TypeScript (SDK 58).
+
+> **Importante:** Expo Go del App Store solo soporta hasta el SDK 54, así que **no abre este proyecto** ([documentación de Expo](https://docs.expo.dev/troubleshooting/expo-go-version-mismatch/)). Mientras se decide cómo probar en el iPhone (decisión D12 en `docs/fase-0/07-decisiones-abiertas.md`), se prueba en el navegador de la computadora.
 
 ## Probarla en tu iPhone
 
 ### Una sola vez
 
 1. Instala en tu computadora **Node.js LTS** (nodejs.org) y **Git** (git-scm.com).
-2. Instala **Expo Go** en el iPhone desde el App Store.
-3. En una terminal, clona el repo en la rama de trabajo:
+2. En una terminal, clona el repo en la rama de trabajo:
 
    ```bash
    git clone -b claude/quirky-davinci-pqwpl4 https://github.com/MauIds/blip-app.git
@@ -25,9 +26,7 @@ npm install            # solo si cambiaron dependencias; no hace daño correrlo 
 npx expo start         # muestra un código QR
 ```
 
-Escanea el QR con la cámara del iPhone y se abre en Expo Go. El teléfono y la computadora tienen que estar en la **misma red Wi-Fi**; si no se puede, usa `npx expo start --tunnel`.
-
-Si Expo Go dice que el proyecto es incompatible, actualiza Expo Go desde el App Store: este proyecto usa **Expo SDK 58**.
+Con `npx expo start` corriendo, abre **http://localhost:8081** en el navegador de la computadora. En esa vista la pestaña Perfil queda cortada por el ancho: entra con el botón **Completa tu perfil**.
 
 ## Qué probar en la Fase 1
 
@@ -37,7 +36,7 @@ Si Expo Go dice que el proyecto es incompatible, actualiza Expo Go desde el App 
 4. Pega tu link de GitHub completo: al guardar queda solo tu usuario.
 5. Toca **Elegir qué datos compartes**: por defecto solo están activos nombre y puesto.
 6. Activa GitHub: aparece en **Así te verán**. La fila **Edad** siempre está apagada y bloqueada.
-7. Cierra Expo Go y vuelve a abrir la app: tu perfil y tus elecciones siguen ahí.
+7. Recarga la página: tu perfil y tus elecciones siguen ahí.
 
 ## Comandos de desarrollo
 

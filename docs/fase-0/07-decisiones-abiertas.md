@@ -1,6 +1,6 @@
 # Decisiones abiertas
 
-**Estado (16/10/2026):** Fase 0 aprobada con todas las recomendaciones (D2 a D7, D9 a D11). Siguen pendientes **D1** y **D8**, que no tenían recomendación.
+**Estado (17/10/2026):** Fase 0 aprobada con todas las recomendaciones (D2 a D7, D9 a D11). D1 respondida: **Windows**. Pendientes: **D8** y **D12**.
 
 ## Decisiones
 
@@ -16,6 +16,7 @@
 | D8 | ¿Qué es DD26? Nombre, fechas y tipo del evento | — | Para cargarlo como primer evento de prueba |
 | D9 | Modelo de IA para misiones (Fase 7) | **Claude Opus 5.5** por calidad; **Claude Haiku 5.5** si prefieres ahorrar | Costo aproximado por persona: USD 0,016 con Opus 5.5 y USD 0,0004 con Haiku 5.5 |
 | D10 | ¿Ya tienen el dominio `blipz.app`? | Comprarlo antes de grabar etiquetas NFC | Una etiqueta grabada con un dominio que no controlan no se puede corregir |
+| D12 | **Nueva.** Cómo probar en el iPhone, ya que Expo Go del App Store no soporta el SDK 58: (A) pagar Apple Developer ahora y usar una build de desarrollo con EAS, (B) bajar el proyecto al SDK 54, (C) solo navegador hasta la Fase 8 | A | El pago se necesita igual en la Fase 8; B obliga a subir 4 versiones de Expo después |
 | D11 | ¿Cómo aplicamos cambios a Supabase en la Fase 4? | Tú corres `npx supabase db push` desde tu PC con el comando que te paso | No hay que dejar llaves de tu cuenta en el entorno en la nube |
 
 ## Imágenes pendientes
@@ -34,4 +35,4 @@
 | Reglas de misiones e insignias | Se calculan en la app a partir de los encuentros confirmados que da el backend. Rápido de construir; en un prototipo no importa que alguien experto pueda falsear su propio progreso |
 | Hora del badge | La app se la envía en cada Sync; los PINGs anteriores usan la hora de sincronización |
 | Pantalla OLED (SSD1309 o SSD1306) | Lo resuelve el firmware; la app no cambia |
-| Expo Go hasta la Fase 7 | El Bluetooth real entra en la Fase 8, así que no pagas Apple antes de tiempo |
+| ~~Expo Go hasta la Fase 7~~ | **Falso**: Expo Go del App Store se quedó en el SDK 54. Reemplazado por D12 |
