@@ -40,6 +40,14 @@
       "sessions": 0,
       "memories": 1,
       "prompts": 0
+    },
+    {
+      "id": "998ffd0d",
+      "created_by": "vm",
+      "created_at": "2026-10-17T05:18:24Z",
+      "sessions": 0,
+      "memories": 1,
+      "prompts": 0
     }
   ]
 }
